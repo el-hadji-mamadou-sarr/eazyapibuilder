@@ -1,6 +1,8 @@
 const BaseViews = require("./BaseViews");
 class UserViews {
   param?: number;
+  body?: any;
+  permissions?: any;
   list(req: any, res: any) {
     res.send("listed");
   }
