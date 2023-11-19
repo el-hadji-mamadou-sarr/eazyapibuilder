@@ -6,7 +6,7 @@ this package help create api quickly.
 
 - `npm run start` to start server
 - in `urls.ts` define the base path of your api in the url list.
-- now your get,post,getById, update, delete, api is created for each path
+- now your get,post,getById, update, delete, apis are created for each path
 
 # Notes
 
