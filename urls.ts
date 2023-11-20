@@ -1,2 +1,4 @@
 const userViews = require("./views/UserViews");
-module.exports = [["/users", userViews]];
+const urls = [["/users", userViews]];
+
+export default urls;

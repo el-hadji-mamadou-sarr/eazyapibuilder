@@ -1,22 +1,31 @@
-const BaseViews = require("./BaseViews");
-class UserViews {
-  param?: number;
-  body?: any;
-  permissions?: any;
-  list(req: any, res: any) {
-    res.send("listed");
+import { Request, Response } from "express";
+import { IBaseViews } from "./IBaseViews";
+import { User } from "@prisma/client";
+import { prisma } from "../databse";
+
+class UserViews implements IBaseViews {
+  list(req: Request, res: Response) {
+    return res.send(" users listed");
   }
-  retreive(req: any, res: any) {
-    res.send("retreived");
+
+  async create(req: Request, res: Response) {
+
+    const userVal:User = req.body;
+    const user = await prisma.user.create({
+      data: {
+        ...userVal,
+      },
+    });
+    res.send(user);
   }
-  create(req: any, res: any) {
-    res.send("created");
+  retreive(req: Request, res: Response) {
+    return res.send("user created");
   }
-  delete(req: any, res: any) {
-    res.send("deleted");
+  delete(req: Request, res: Response) {
+    return res.send("user deleted");
   }
-  update(req: any, res: any) {
-    res.send("updated");
+  update(req: Request, res: Response) {
+    return res.send("user updated");
   }
 }
 
